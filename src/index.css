@@ -1,0 +1,376 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Logo and Brand Font - Share Tech Mono */
+.logo,
+.brand-text,
+.clear-ai-heading,
+.logo-text {
+  font-family: 'Share Tech Mono', monospace !important;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+/* Reference Image Font Styling */
+.reference-font {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.3), 0 0 20px rgba(6, 182, 212, 0.2) !important;
+}
+
+@media (min-width: 768px) {
+  .reference-font {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Reference Image Subheading Styling - Updated to metallic grey */
+.reference-subheading {
+  font-family: 'Share Tech Mono', monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.05em !important;
+  color: #8C9EAE !important; /* Sleek metallic grey with subtle blue undertone */
+  line-height: 1.6 !important;
+  text-align: left !important;
+  max-width: fit-content !important;
+  margin: 0 auto !important;
+}
+
+@media (min-width: 768px) {
+  .reference-subheading {
+    font-size: 1rem !important;
+  }
+}
+
+/* Navigation Logo Hover Effect - Top Left Corner Only */
+.nav-logo-link {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.nav-logo-link:hover {
+  transform: translateY(-3px);
+}
+
+.nav-logo-icon-container {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-logo-link:hover .nav-logo-icon-container {
+  transform: translateY(-2px);
+}
+
+/* Custom Animations */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes floating-delayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-180deg);
+  }
+}
+
+@keyframes floating-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(90deg);
+  }
+}
+
+.animate-floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.animate-floating-delayed {
+  animation: floating-delayed 8s ease-in-out infinite;
+}
+
+.animate-floating-slow {
+  animation: floating-slow 10s ease-in-out infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #06b6d4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #0891b2);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Button Enhancements */
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+/* Gradient Text Enhancement */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Backdrop Blur Support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* Enhanced Blur Effects */
+.blur-3xl {
+  filter: blur(64px);
+}
+
+/* Custom Glow Effect */
+.glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+}
+
+/* Typewriter Cursor Animation */
+.typewriter-cursor {
+  color: #8b5cf6;
+  font-weight: 300;
+  animation: typewriter-blink 1s infinite;
+}
+
+@keyframes typewriter-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Smooth text rendering for typewriter effect */
+.typewriter-text {
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Navigation Enhancements */
+.navigation-container {
+  position: relative;
+}
+
+/* Mobile Menu Animation Improvements */
+@media (max-width: 768px) {
+  .mobile-menu-item {
+    transform: translateX(20px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .mobile-menu-item.visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Touch Target Improvements for Mobile */
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Hamburger Menu Animation */
+.hamburger-line {
+  transform-origin: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .text-8xl {
+    font-size: 4rem;
+  }
+  
+  .text-xl {
+    font-size: 1.125rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Enhanced Mobile Menu Styling */
+@media (max-width: 768px) {
+  .mobile-menu-backdrop {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+/* Service Panel Heading Text Color Hover Effect */
+.service-panel-heading {
+  color: white;
+  transition: color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.service-panel:hover .service-panel-heading {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Enhanced Service Panel Styling */
+.service-panel {
+  /* Optimized line height for better text density */
+  line-height: 1.4;
+  /* Add focus styles for accessibility */
+  transition: all 0.3s ease;
+}
+
+.service-panel:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.service-panel h3 {
+  /* Tighter line height for headings */
+  line-height: 1.2;
+}
+
+.service-panel p {
+  /* Optimized paragraph spacing */
+  line-height: 1.5;
+}
+
+/* Responsive adjustments for service panels */
+@media (max-width: 768px) {
+  .service-panel {
+    /* Even more compact on mobile */
+    padding: 1rem !important;
+  }
+  
+  .service-panel h3 {
+    font-size: 1.125rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .service-panel p {
+    min-height: 3rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .service-panel button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Modal Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
