@@ -56,7 +56,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items, allowMultiple = fals
             <button
               onClick={() => toggleItem(item.id)}
               onKeyDown={(e) => handleKeyDown(e, item.id)}
-              className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-700/20 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-opacity-50 focus:ring-inset"
+              className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-700/20 transition-colors duration-200 focus:outline-none"
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${item.id}`}
               aria-describedby={`faq-question-${item.id}`}
